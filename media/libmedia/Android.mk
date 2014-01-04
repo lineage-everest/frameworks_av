@@ -104,6 +104,10 @@ endif
 endif
 #QTI Resampler
 
+ifeq ($(BOARD_OMX_NEEDS_LEGACY_AUDIO),true)
+	LOCAL_CFLAGS += -DBOARD_OMX_NEEDS_LEGACY_AUDIO
+endif
+
 LOCAL_SHARED_LIBRARIES := \
 	libui liblog libcutils libutils libbinder libsonivox libicuuc libexpat \
         libcamera_client libstagefright_foundation \
